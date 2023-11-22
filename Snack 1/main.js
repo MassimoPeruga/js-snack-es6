@@ -14,12 +14,17 @@ for (const bici of biciclette) {
     }
 }
 
+const { nome, peso, img } = biciLeggera;
+
+const cardBody = document.querySelector('.card-body');
+
+const template = `
+  <h4 id="img_name" class="card-title">${nome}</h4>
+  <p id="img_weight" class="card-text">Peso: ${peso} kg</p>
+`;
+
+cardBody.innerHTML = template;
+
 const bikeImg = document.getElementById('img_bike');
-const bikeName = document.getElementById('img_name');
-const bikeWeight = document.getElementById('img_weight');
-
-bikeName.textContent = `${biciLeggera.nome}`;
-bikeWeight.textContent = `Peso: ${biciLeggera.peso} kg`;
-
-bikeImg.src = `img/${biciLeggera.img}`;
-bikeImg.alt = `${biciLeggera.nome}`;
+bikeImg.src = `img/${img}`;
+bikeImg.alt = nome;
